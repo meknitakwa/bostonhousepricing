@@ -1,10 +1,96 @@
+```html
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
     <meta charset="UTF-8">
-    <title>Hello World </title>
+    <title>California House Price Prediction</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Hind:300" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet" type="text/css">
 </head>
+
 <body>
- <h1>Hello World </h1>
+
+<div class="login">
+
+    <h1>California House Price Prediction</h1>
+
+    <!-- Formulaire de prédiction -->
+    <form action="{{ url_for('predict') }}" method="post">
+
+        <input type="text"
+               name="MedInc"
+               placeholder="Median Income (MedInc)"
+               required="required" />
+
+        <br><br>
+
+        <input type="text"
+               name="HouseAge"
+               placeholder="House Age"
+               required="required" />
+
+        <br><br>
+
+        <input type="text"
+               name="AveRooms"
+               placeholder="Average Rooms (AveRooms)"
+               required="required" />
+
+        <br><br>
+
+        <input type="text"
+               name="AveBedrms"
+               placeholder="Average Bedrooms (AveBedrms)"
+               required="required" />
+
+        <br><br>
+
+        <input type="text"
+               name="Population"
+               placeholder="Population"
+               required="required" />
+
+        <br><br>
+
+        <input type="text"
+               name="AveOccup"
+               placeholder="Average Occupancy (AveOccup)"
+               required="required" />
+
+        <br><br>
+
+        <input type="text"
+               name="Latitude"
+               placeholder="Latitude"
+               required="required" />
+
+        <br><br>
+
+        <input type="text"
+               name="Longitude"
+               placeholder="Longitude"
+               required="required" />
+
+        <br><br>
+
+        <button type="submit"
+                class="btn btn-primary btn-block btn-large">
+            Predict
+        </button>
+
+    </form>
+
+    <br>
+
+    {{ prediction_text }}
+
+</div>
+
 </body>
+
 </html>
+```
